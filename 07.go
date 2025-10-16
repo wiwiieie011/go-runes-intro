@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"unicode/utf8"
+	"strings"
+	// "unicode/utf8"
 )
 
 func main() {
@@ -16,10 +17,11 @@ fmt.Println(ReverseRunes(s))
 // Напиши функцию ReverseRunes(s string) string, которая переворачивает строку по рунам (а не по байтам!). Проверь на "Привет", "你好", "🙂👍".
 func ReverseRunes(s string) string {
 	var  revesNumber  = []rune(s)
-	res := make([]rune, len(revesNumber))
-	for i:= 0; i <= utf8.RuneCountInString(s)-1 ; i++{
-		res[i] = revesNumber[len(revesNumber)-1-i]
+	// res := make([]rune, len(revesNumber))
+	var c strings.Builder
+	for i:= len(revesNumber)-1; i >=  0 ; i--{
+		c.WriteRune(revesNumber[i])
 	}
-	return  string(res)
+	return  c.String()
 
 }
