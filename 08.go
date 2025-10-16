@@ -7,7 +7,7 @@ import (
 
 func main() {
 	s := "Интукод"
-	fmt.Println(SubstrRunes(s, 2, 4))
+	fmt.Println(SubstrRunes(s, 2, 6))
 
 }
 
